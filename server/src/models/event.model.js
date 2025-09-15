@@ -5,7 +5,7 @@ const eventSchema = new mongoose.Schema(
     title: { type: String, required: true },
     description: { type: String },
     date: { type: Date, required: true },
-    uid: { type: String, required: true } // UID del usuario de Firebase
+    uid: { type: String, required: true } 
   },
   { timestamps: true }
 );
