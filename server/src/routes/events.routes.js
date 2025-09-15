@@ -1,14 +1,13 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   createEvent,
   getEvents,
   updateEvent,
-  deleteEvent
-} from "../controllers/events.controller.js";
-import { authenticate } from "../middleware/auth.js";
+  deleteEvent,
+} = require("../controllers/events.controller.js");
+const { authenticate } = require("../middleware/auth.js");
 
 const router = express.Router();
-
 
 router.use(authenticate);
 
@@ -17,4 +16,4 @@ router.get("/", getEvents);
 router.put("/:id", updateEvent);
 router.delete("/:id", deleteEvent);
 
-export default router;
+module.exports = router;

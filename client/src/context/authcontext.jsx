@@ -11,7 +11,7 @@ import {
 
 const AuthContext = createContext();
 
-// Hook para usar AuthContext
+
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
@@ -28,27 +28,25 @@ export const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  // Función para cerrar sesión
   const logout = async () => {
     await signOut(auth);
     setUser(null);
   };
 
-  // Función para login
   const login = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     setUser(userCredential.user);
     return userCredential.user;
   };
 
-  // Función para registro
+
   const register = async (email, password) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     setUser(userCredential.user);
     return userCredential.user;
   };
 
-  // 🔹 Función para login con Google
+ 
   const loginWithGoogle = async () => {
     const googleProvider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, googleProvider);

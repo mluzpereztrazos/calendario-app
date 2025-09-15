@@ -15,20 +15,20 @@ export default function App() {
       </nav>
 
       <Routes>
-        {/* Home pública, siempre visible */}
+        {}
         <Route path="/" element={<HomePublic />} />
 
-        {/* Página privada: calendario de eventos */}
+        {}
         <Route
           path="/app"
           element={
             <PrivateRoute>
-              <Events /> {/* 👈 mostrar calendario para usuarios logueados */}
+              <Events /> {}
             </PrivateRoute>
           }
         />
 
-        {/* Rutas públicas de login y registro */}
+        {}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>

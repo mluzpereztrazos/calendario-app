@@ -1,16 +1,16 @@
 
-import { auth } from "../firebase";  // importa Firebase Auth
+import { auth } from "../firebase";  
 import { getAllData } from "../lib/utils/api"; 
 
 
 const URL_BASE = 'https://complete-crud-react-node-back.onrender.com';
 const URL_API = '/api/users/';
 
-// Función para obtener headers con token
+
 const getHeaders = async () => {
   const user = auth.currentUser;
   if (user) {
-    const token = await user.getIdToken(); // obtiene el ID token de Firebase
+    const token = await user.getIdToken(); 
     return {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`

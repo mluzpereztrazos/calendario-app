@@ -1,4 +1,4 @@
-/* Contenedor del calendario */
+
 .events-container {
   max-width: 900px;
   margin: 2rem auto;
@@ -16,7 +16,7 @@
   font-weight: 600;
 }
 
-/* FullCalendar */
+
 .fc {
   border-radius: 12px;
   overflow: hidden;
@@ -59,7 +59,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-/* Modal backdrop */
+
 .ReactModal__Overlay {
   background: rgba(200, 200, 200, 0.45) !important;
   display: flex;
@@ -68,7 +68,7 @@
   z-index: 1000;
 }
 
-/* Modal content */
+
 .ReactModal__Content {
   background: #fff8f8 !important;
   padding: 2rem;
@@ -82,7 +82,6 @@
   position: relative;
 }
 
-/* Inputs del modal */
 .ReactModal__Content input,
 .ReactModal__Content textarea {
   padding: 0.6rem 0.8rem;
@@ -101,7 +100,6 @@
   box-shadow: 0 0 6px rgba(163, 213, 255, 0.5);
 }
 
-/* Botones del modal */
 .modal-buttons {
   display: flex;
   justify-content: space-between;

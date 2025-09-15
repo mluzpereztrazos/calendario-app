@@ -5,13 +5,15 @@ const MONGODB_URL = process.env.MONGODB_URL;
 const connectDB = async () => {
   try {
     if (!MONGODB_URL) {
-      throw new Error('MONGODB_URL no está definida en .env');
+      throw new Error('❌ MONGODB_URL no está definida en .env');
     }
-    await mongoose.connect(MONGODB_URL);
+
+    await mongoose.connect(MONGODB_URL); // ya no hace falta pasar opciones
+
     console.log('✅ MongoDB connected');
   } catch (error) {
     console.error('❌ MongoDB connection error:', error);
-    process.exit(1); // Detiene la app si no puede conectar
+    process.exit(1);
   }
 };
 

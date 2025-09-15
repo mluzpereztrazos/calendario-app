@@ -1,12 +1,29 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+}
+
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;     
+  height: 100%;
+  width: 100%;
+}
+
 .container {
   max-width: 400px;
-  margin: 2rem auto;
+  width: 90%;
   padding: 1.5rem;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 h1 {
   text-align: center;
@@ -20,11 +37,15 @@ form {
   gap: 0.75rem;
 }
 
-input {
+
+input, textarea {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
 }
+
 
 button {
   padding: 0.5rem;
@@ -34,8 +55,16 @@ button {
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.2s ease;
 }
 
 button:hover {
   background-color: #0069d9;
+}
+
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

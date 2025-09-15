@@ -1,7 +1,6 @@
-import Event from "../models/event.model.js";
+const Event = require('../models/event.model.js');
 
-// Crear evento
-export const createEvent = async (req, res) => {
+const createEvent = async (req, res) => {
   try {
     const { title, description, date } = req.body;
     const event = await Event.create({
@@ -16,8 +15,7 @@ export const createEvent = async (req, res) => {
   }
 };
 
-// Listar eventos del usuario
-export const getEvents = async (req, res) => {
+const getEvents = async (req, res) => {
   try {
     const events = await Event.find({ uid: req.user.uid });
     res.json(events);
@@ -26,11 +24,11 @@ export const getEvents = async (req, res) => {
   }
 };
 
-export const updateEvent = async (req, res) => {
+const updateEvent = async (req, res) => {
   try {
     const { id } = req.params;
     const event = await Event.findOne({ _id: id, uid: req.user.uid });
-    if (!event) return res.status(404).json({ message: "Event not found" });
+    if (!event) return res.status(404).json({ message: 'Event not found' });
 
     Object.assign(event, req.body);
     await event.save();
@@ -40,15 +38,16 @@ export const updateEvent = async (req, res) => {
   }
 };
 
-// Borrar evento
-export const deleteEvent = async (req, res) => {
+const deleteEvent = async (req, res) => {
   try {
     const { id } = req.params;
     const event = await Event.findOneAndDelete({ _id: id, uid: req.user.uid });
-    if (!event) return res.status(404).json({ message: "Event not found" });
+    if (!event) return res.status(404).json({ message: 'Event not found' });
 
-    res.json({ message: "Event deleted" });
+    res.json({ message: 'Event deleted' });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
+
+module.exports = { createEvent, getEvents, updateEvent, deleteEvent };

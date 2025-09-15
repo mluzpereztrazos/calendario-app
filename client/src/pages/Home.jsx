@@ -14,7 +14,7 @@ export default function Home() {
       <h1>Calendario Social 🗓️</h1>
       <p>Bienvenido, {user.email}</p>
       <button onClick={handleLogout}>Cerrar sesión</button>
-      {/* Aquí irían todas las funcionalidades del calendario */}
+      {}
     </div>
   );
 }
